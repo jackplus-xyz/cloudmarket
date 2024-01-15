@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>User Info</title>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <script>
+    function copyText(elementId) {
+      /* Copy text into clipboard */
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          alert("Copied to clipboard");
+        })
+        .catch((err) => {
+          alert("Failed to copy to clipboard");
+        });
+    }
+  </script>
+  <body>
+    <h1>Welcome {{session.userinfo.name}}!</h1>
+    <p><a href="/logout">Logout</a></p>
+    <div>
+      <h2>Your ID</h2>
+      <div class="jwt-container">
+        <span id="user-id" class="token">{{user_id}}</span>
+      </div>
+      <button class="copy-button" onclick="copyText('user-id')">
+        Copy to clipboard
+      </button>
+      <h2>Your JWT</h2>
+      <div class="jwt-container">
+        <pre class="jwt-prefomat">
+          <span id="id-token" class="token">{{id_token}}</span>
+        </pre>
+      </div>
+      <button class="copy-button" onclick="copyText('id-token')">
+        Copy to clipboard
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+body {
+  font-family: "helvetica", sans-serif;
+  text-align: center;
+}
+
+div {
+  width: 75%;
+  margin: auto;
+}
+
+pre {
+  word-wrap: break-word;
+  word-break: normal;
+  white-space: pre-wrap;
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  font-family: monospace;
+}
+
+.jwt-container {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.copy-button {
+  margin-top: 10px;
+}
